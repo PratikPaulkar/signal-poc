@@ -1,1 +1,14 @@
-<p>component1 works!</p>
+<div>
+    <h2>Angular Form with Validations</h2>
+    <form [formGroup]="myForm1">
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" #firstNameField [value]="firstName()" (input)="firstName.set(firstNameField.value)" formControlName="firstName">
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" #lastNameField [value]="lastName()" (input)="lastName.set(lastNameField.value)" formControlName="lastName">
+      </div>
+    </form>
+    <!-- <p>{{firstName()}} {{lastName()}}</p> -->
+</div>

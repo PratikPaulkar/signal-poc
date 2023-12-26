@@ -1,1 +1,24 @@
-<p>component2 works!</p>
+<div>
+    <h2>Angular Form with Validations</h2>
+    <form [formGroup]="myForm2">
+      <div>
+        <label for="mobile">Mobile :</label>
+        <input type="Number" id="mobile" #mobileField [value]="mobile()" (input)="mobile.set(mobileField.value)"  formControlName="mobile">
+        <!-- <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
+          <div *ngIf="mobile.errors.required">Mobile Number is required.</div>
+          <div *ngIf="mobile.errors.minlength">Mobile Number must be at least 10 characters long.</div>
+        </div> -->
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" #emailField [value]="email()" (input)="email.set(emailField.value)" formControlName="email">
+        <!-- <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors.required">Email is required.</div>
+          <div *ngIf="email.errors.minlength">Email must be at least 6 characters long.</div>
+        </div> -->
+      </div>
+      <!-- <div>
+        <button type="submit" [disabled]="myForm2.invalid">Submit</button>
+      </div> -->
+    </form>
+  </div>
